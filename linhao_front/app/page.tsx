@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import SchoolHeader from '@/components/sections/SchoolHeader'
 import Teachers from '@/components/sections/Teachers'
 import Programs from '@/components/sections/Programs'
+import Students from '@/components/sections/Students'
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HeroVideo />
       <Teachers/>
       <Programs/>
+      <Students/>
             
     </>
   )

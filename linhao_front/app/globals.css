@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream:      #F3F2EE;
+  --color-crimson:    #9A0809;
+  --color-vermillion: #F44027;
+  --color-gold:       #EEC537;
+  --color-white:       #FFFFFF;
+  --color-black:       #000000;
+
+  --font-sans:    var(--font-racama), sans-serif;
+  --font-serif:   var(--font-racama), serif;
+  --font-mono:    var(--font-racama), monospace; /* ← Noto Serif SC for Chinese chars only */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Flip card */
+.perspective { perspective: 1000px; }
+.flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  width: 100%; height: 100%;
+}
+.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+
+/* Gold divider line */
+.gold-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #EDC537, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
 }
+.float { animation: float 4s ease-in-out infinite; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-racama), sans-serif;
 }

@@ -1,0 +1,31 @@
+export default function SchoolHeader() {
+  return (
+    <section className="bg-cream min-h-screen flex flex-col items-center justify-center gap-8 px-6 pt-24 pb-16"
+  style={{
+    backgroundImage: "url('/images/schoolheader_bg.png')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}>
+
+      {/* Logo */}
+      <div className="w-60 h-60 rounded-full border-4 border-crimson overflow-hidden shadow-xl">
+        <img
+          src="/images/logo.png"
+          alt="School Logo"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* School name */}
+      <div className="text-center">
+        <h1 className="text-crimson font-serif text-5xl md:text-6xl lg:text-7xl tracking-wide">
+          linhao.chinese
+        </h1>
+        <p className="text-vermillion font-serif text-2xl md:text-3xl mt-3 tracking-widest">
+          Школа китайского языка
+        </p>
+      </div>
+
+    </section>
+  )
+}

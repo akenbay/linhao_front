@@ -1,13 +1,13 @@
 'use client'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
-import { WaveDivider, LanternSVG, MeanderBorder, CornerDecoration } from '@/components/ui/ChineseDecorations'
+
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(true)
 
-  // Unmute as soon as user interacts with the page
+
   useEffect(() => {
     const unlock = () => {
       if (videoRef.current) {
@@ -17,6 +17,7 @@ export default function HeroVideo() {
     document.addEventListener('click', unlock, { once: true })
     return () => document.removeEventListener('click', unlock)
   }, [])
+
 
   const togglePlay = () => {
     if (!videoRef.current) return
@@ -28,64 +29,23 @@ export default function HeroVideo() {
     setPlaying(!playing)
   }
 
+
   return (
     <section
       className="relative min-h-screen flex flex-col overflow-hidden pt-16"
       style={{ backgroundImage: "url('/images/hero_bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
-
       {/* Background watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <span className="text-[28rem] font-serif text-white/5 leading-none">中</span>
       </div>
 
+
       <div className="relative z-10 flex-1 flex items-center px-6">
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center py-16">
 
-          {/* LEFT */}
-          <div>
-            <div className="inline-flex items-center gap-2 bg-crimson/20 border border-crimson/40 text-crimson px-4 py-1.5 rounded-sm text-sm font-medium mb-6">
-              <span>✦</span>
-              <span>Школа китайского языка</span>
-              <span>✦</span>
-            </div>
 
-            <h1 className="text-vermillion font-serif text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              Откройте мир<br/>
-              <span className="text-vermillion">китайского языка</span>
-            </h1>
-
-            <p className="text-black/70 text-lg max-w-xl mb-10 leading-relaxed">
-              Профессиональная школа китайского языка с подтверждёнными результатами.
-              Более 500 выпускников. Сертифицированные преподаватели.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/programs"
-                className="bg-crimson text-cream px-8 rounded-2xl py-4 text-base hover:bg-yellow-400 shadow-black/30 text-center transition-colors duration-300">
-                Посмотреть программы
-              </Link>
-              <a href="https://t.me/YourSchoolHandle"
-                className="border-2 border-crimson rounded-2xl text-crimson px-8 py-4 text-base hover:bg-gold hover:border-gold transition-all duration-300 text-center">
-                Написать в Telegram
-              </a>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6 border-t border-crimson/20 pt-8 max-w-sm">
-              {[
-                { num: '500+', label: 'Выпускников' },
-                { num: '5 лет', label: 'Опыта' },
-                { num: '97%',  label: 'Сдали HSK' },
-              ].map(s => (
-                <div key={s.label} className="text-center">
-                  <p className="text-crimson text-2xl font-serif font-bold">{s.num}</p>
-                  <p className="text-black/50 text-xs mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT */}
+          {/* LEFT — formerly RIGHT (video card) */}
           <div className="bg-white rounded-2xl p-5 shadow-xl flex flex-col items-center gap-8">
 
             <div className="relative group">
@@ -101,7 +61,7 @@ export default function HeroVideo() {
                 />
               </div>
 
-              {/* Hover overlay — ONE button only */}
+              {/* Hover overlay */}
               <div className="absolute inset-0 rounded-full flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-300">
                 <button
                   onClick={togglePlay}
@@ -137,6 +97,51 @@ export default function HeroVideo() {
             </div>
 
           </div>
+
+
+          {/* RIGHT — formerly LEFT (text content) */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-crimson/20 border border-crimson/40 text-crimson px-4 py-1.5 rounded-sm text-sm font-medium mb-6">
+              <span>✦</span>
+              <span>Школа китайского языка</span>
+              <span>✦</span>
+            </div>
+
+            <h1 className="text-vermillion font-serif text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+              Откройте мир<br/>
+              <span className="text-vermillion">китайского языка</span>
+            </h1>
+
+            <p className="text-black/70 text-lg max-w-xl mb-10 leading-relaxed">
+              Профессиональная школа китайского языка с подтверждёнными результатами.
+              Более 500 выпускников. Сертифицированные преподаватели.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link href="/programs"
+                className="bg-crimson text-cream px-8 rounded-2xl py-4 text-base hover:bg-yellow-400 shadow-black/30 text-center transition-colors duration-300">
+                Посмотреть программы
+              </Link>
+              <a href="https://t.me/YourSchoolHandle"
+                className="border-2 border-crimson rounded-2xl text-crimson px-8 py-4 text-base hover:bg-gold hover:border-gold transition-all duration-300 text-center">
+                Написать в Telegram
+              </a>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 border-t border-crimson/20 pt-8 max-w-sm">
+              {[
+                { num: '500+', label: 'Выпускников' },
+                { num: '5 лет', label: 'Опыта' },
+                { num: '97%',  label: 'Сдали HSK' },
+              ].map(s => (
+                <div key={s.label} className="text-center">
+                  <p className="text-gold text-2xl font-serif font-bold">{s.num}</p>
+                  <p className="text-gold/50 text-xs mt-1">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

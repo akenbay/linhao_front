@@ -1,21 +1,48 @@
-// components/sections/HeroVideo.tsx
+'use client'
+import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import { WaveDivider, LanternSVG, MeanderBorder, CornerDecoration } from '@/components/ui/ChineseDecorations'
 
 export default function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(true)
+
+  // Unmute as soon as user interacts with the page
+  useEffect(() => {
+    const unlock = () => {
+      if (videoRef.current) {
+        videoRef.current.muted = false
+      }
+    }
+    document.addEventListener('click', unlock, { once: true })
+    return () => document.removeEventListener('click', unlock)
+  }, [])
+
+  const togglePlay = () => {
+    if (!videoRef.current) return
+    if (playing) {
+      videoRef.current.pause()
+    } else {
+      videoRef.current.play()
+    }
+    setPlaying(!playing)
+  }
+
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden pt-16" style={{ backgroundImage: "url('/images/hero_bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section
+      className="relative min-h-screen flex flex-col overflow-hidden pt-16"
+      style={{ backgroundImage: "url('/images/hero_bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
 
       {/* Background watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <span className="text-[28rem] font-serif text-white/5 leading-none">中</span>
       </div>
 
-      {/* Two-column layout */}
       <div className="relative z-10 flex-1 flex items-center px-6">
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center py-16">
 
-          {/* LEFT — Hero text — NO background, original styling */}
+          {/* LEFT */}
           <div>
             <div className="inline-flex items-center gap-2 bg-crimson/20 border border-crimson/40 text-crimson px-4 py-1.5 rounded-sm text-sm font-medium mb-6">
               <span>✦</span>
@@ -35,21 +62,20 @@ export default function HeroVideo() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link href="/programs"
-                className="bg-crimson text-cream px-8 rounded-2xl py-4 text-base hover:bg-yellow-400  shadow-black/30 text-center">
+                className="bg-crimson text-cream px-8 rounded-2xl py-4 text-base hover:bg-yellow-400 shadow-black/30 text-center transition-colors duration-300">
                 Посмотреть программы
               </Link>
               <a href="https://t.me/YourSchoolHandle"
-                className="border-2 rounded-2xl text-crimson px-8 py-4 text-base hover:bg-gold hover:text-crimson transition-all duration-300 text-center">
+                className="border-2 border-crimson rounded-2xl text-crimson px-8 py-4 text-base hover:bg-gold hover:border-gold transition-all duration-300 text-center">
                 Написать в Telegram
               </a>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-6 border-t border-crimson/20 pt-8 max-w-sm">
               {[
                 { num: '500+', label: 'Выпускников' },
                 { num: '5 лет', label: 'Опыта' },
-                { num: '97%', label: 'Сдали HSK' },
+                { num: '97%',  label: 'Сдали HSK' },
               ].map(s => (
                 <div key={s.label} className="text-center">
                   <p className="text-crimson text-2xl font-serif font-bold">{s.num}</p>
@@ -59,13 +85,13 @@ export default function HeroVideo() {
             </div>
           </div>
 
-          {/* RIGHT — White rounded rectangle with circle video + bottom corners */}
+          {/* RIGHT */}
           <div className="bg-white rounded-2xl p-5 shadow-xl flex flex-col items-center gap-8">
 
-            {/* Circle video */}
-            <div className="relative">
+            <div className="relative group">
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-crimson shadow-[0_0_60px_rgba(237,197,55,0.25)] overflow-hidden">
                 <video
+                  ref={videoRef}
                   src="/videos/IMG_3807.MP4"
                   autoPlay
                   muted
@@ -74,28 +100,43 @@ export default function HeroVideo() {
                   className="w-full h-full object-cover"
                 />
               </div>
+
+              {/* Hover overlay — ONE button only */}
+              <div className="absolute inset-0 rounded-full flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-300">
+                <button
+                  onClick={togglePlay}
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-14 h-14 bg-white/90 rounded-full flex items-center justify-center hover:bg-white shadow-lg"
+                >
+                  {playing ? (
+                    <span className="flex gap-1.5">
+                      <span className="w-1.5 h-6 bg-crimson rounded-sm"/>
+                      <span className="w-1.5 h-6 bg-crimson rounded-sm"/>
+                    </span>
+                  ) : (
+                    <span className="w-0 h-0 ml-1.5" style={{
+                      borderTop: '11px solid transparent',
+                      borderBottom: '11px solid transparent',
+                      borderLeft: '18px solid #990808'
+                    }}/>
+                  )}
+                </button>
+              </div>
             </div>
 
-            {/* Bottom row — Name (left) | Telegram (right) */}
-            <div className="w-full flex items-end justify-between ">
-
-              {/* Bottom-left: Name + title */}
+            <div className="w-full flex items-end justify-between">
               <div>
-                <p className="font-serif text-vermillion  text-lg leading-tight">Имя Основателя</p>
+                <p className="font-serif text-vermillion text-lg leading-tight">Имя Основателя</p>
                 <p className="text-gray-400 text-sm mt-0.5">Основатель школы</p>
               </div>
-
-              {/* Bottom-right: Telegram */}
               <a
                 href="https://t.me/YourSchoolHandle"
-                className="flex items-center gap-2  text-black px-5 py-2.5 text-lg "
+                className="flex items-center gap-2 text-black px-5 py-2.5 text-lg hover:text-crimson transition-colors"
               >
                 @Telegram
               </a>
-
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>

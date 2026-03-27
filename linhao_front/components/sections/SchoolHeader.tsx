@@ -22,8 +22,12 @@ export default function SchoolHeader() {
           linhao.chinese
         </h1>
         <p className="text-vermillion font-serif text-2xl md:text-3xl mt-3 tracking-widest">
-          Школа китайского языка
+          Онлайн-Школа китайского языка
         </p>
+        <p className="text-black font-serif text-2xl md:text-xl mt-3 tracking-widest">
+          Подготовка к HSK и CSCA экзаменам
+        </p>
+        
       </div>
 
     </section>

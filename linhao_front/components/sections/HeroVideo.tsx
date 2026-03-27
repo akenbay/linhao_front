@@ -48,6 +48,15 @@ export default function HeroVideo() {
           {/* LEFT — formerly RIGHT (video card) */}
           <div className="bg-white rounded-2xl p-5 shadow-xl flex flex-col items-center gap-8">
 
+            <div className="w-full flex items-end justify-between">
+              <div>
+                <p className="font-serif text-vermillion text-lg leading-tight">你好</p>
+              </div>
+              <div>
+                <p className="font-serif text-vermillion text-lg leading-tight">Привет!</p>
+              </div>
+            </div>
+
             <div className="relative group">
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-crimson shadow-[0_0_60px_rgba(237,197,55,0.25)] overflow-hidden">
                 <video

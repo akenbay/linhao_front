@@ -47,7 +47,7 @@ export default function Teachers() {
         {/* Title */}
         <div className="text-center mb-14">
           <h2 className="font-serif text-crimson text-3xl md:text-5xl font-bold mb-4">
-            Наши преподаватели
+            Наши преподаватели по CSCA
           </h2>
           <div className="h-0.5 w-32 mx-auto bg-linear-to-r from-transparent via-vermillion to-transparent"/>
         </div>

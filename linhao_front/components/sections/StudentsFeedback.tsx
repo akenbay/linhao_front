@@ -17,6 +17,10 @@ export default function StudentFeedback() {
     { src: '/images/studentf11.jpg', rotate: 'rotate-2'  },
     { src: '/images/studentf12.jpg', rotate: '-rotate-1' },
     { src: '/images/studentf13.jpg', rotate: '-rotate-1' },
+    { src: '/images/studentf14.jpg',  rotate: 'rotate-2'  },
+    { src: '/images/studentf15.jpg',  rotate: '-rotate-2' },
+    { src: '/images/studentf16.jpg', rotate: 'rotate-1'  },
+    { src: '/images/studentf17.jpg', rotate: 'rotate-2'  },
   ]
 
   const [current, setCurrent] = useState(0)

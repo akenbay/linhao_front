@@ -1,6 +1,11 @@
+'use client'
+
+import { useState } from 'react'
+
 export default function StudentFeedback() {
   const screenshots = [
     { src: '/images/studentf1.jpg',  rotate: '-rotate-1' },
+    { src: '/images/studentf2.jpg',  rotate: '-rotate-1' },
     { src: '/images/studentf3.jpg',  rotate: '-rotate-2' },
     { src: '/images/studentf4.jpg',  rotate: 'rotate-1'  },
     { src: '/images/studentf5.jpg',  rotate: 'rotate-2'  },
@@ -11,12 +16,16 @@ export default function StudentFeedback() {
     { src: '/images/studentf10.jpg', rotate: 'rotate-1'  },
     { src: '/images/studentf11.jpg', rotate: 'rotate-2'  },
     { src: '/images/studentf12.jpg', rotate: '-rotate-1' },
+    { src: '/images/studentf13.jpg', rotate: '-rotate-1' },
   ]
 
-  const col1 = [screenshots[0], screenshots[3], screenshots[6], screenshots[9]]
-  const col2 = [screenshots[1], screenshots[4], screenshots[7], screenshots[10]]
-  const col3 = [screenshots[2], screenshots[5], screenshots[8]]
-  const cols = [col1, col2, col3]
+  const [current, setCurrent] = useState(0)
+  const total = screenshots.length
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total)
+  const next = () => setCurrent((c) => (c + 1) % total)
+
+  const getIndex = (offset: number) => (current + offset + total) % total
 
   return (
     <section className="bg-[#0f0c0a] py-24 px-6 overflow-hidden">
@@ -32,32 +41,66 @@ export default function StudentFeedback() {
           <p className="text-cream/40 text-sm mt-4">Скриншоты реальных отзывов</p>
         </div>
 
-        {/* 3-column masonry */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-          {cols.map((col, ci) => (
-            <div key={ci} className={`flex flex-col gap-5 ${ci === 1 ? 'mt-10' : ''}`}>
-              {col.map((s, i) => (
+        {/* Carousel */}
+        <div className="relative flex items-center justify-center gap-4 md:gap-6 h-[480px] md:h-[560px]">
+
+          <button
+            onClick={prev}
+            className="z-10 shrink-0 w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-cream flex items-center justify-center transition"
+          >
+            ‹
+          </button>
+
+          <div className="flex items-center gap-4 md:gap-6 w-full justify-center h-full">
+            {[-1, 0, 1].map((offset) => {
+              const s = screenshots[getIndex(offset)]
+              const isActive = offset === 0
+              return (
                 <div
-                  key={i}
+                  key={offset}
+                  onClick={() => offset !== 0 && setCurrent(getIndex(offset))}
                   className={`
-                    ${s.rotate} hover:rotate-0 hover:scale-105
-                    transition-all duration-300 cursor-pointer
-                    rounded-2xl overflow-hidden shadow-2xl border border-white/5
+                    transition-all duration-500 cursor-pointer rounded-2xl overflow-hidden
+                    border shadow-2xl shrink-0 h-full
+                    ${isActive
+                      ? 'w-56 md:w-80 scale-100 opacity-100 border-gold/30 z-10'
+                      : 'w-36 md:w-52 scale-90 opacity-40 border-white/5 z-0'
+                    }
+                    ${isActive ? '' : s.rotate}
                   `}
                 >
                   <img
                     src={s.src}
                     alt="Отзыв"
-                    className="w-full h-auto block"
+                    className="w-full h-full object-contain bg-black/20"
                   />
                 </div>
-              ))}
-            </div>
+              )
+            })}
+          </div>
+
+          <button
+            onClick={next}
+            className="z-10 shrink-0 w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-cream flex items-center justify-center transition"
+          >
+            ›
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-8">
+          {screenshots.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === current ? 'bg-gold w-4' : 'bg-white/20 w-1.5'
+              }`}
+            />
           ))}
         </div>
 
-        {/* Bottom note */}
-        <p className="text-center text-cream/30 text-xs mt-10">
+        <p className="text-center text-cream/30 text-xs mt-6">
           Все отзывы — реальные скриншоты из Telegram и Instagram
         </p>
 

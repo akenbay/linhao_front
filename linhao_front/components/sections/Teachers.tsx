@@ -1,32 +1,36 @@
 export default function Teachers() {
   const teachers = [
     {
-      name: 'Имя Преподавателя',
-      role: 'Преподаватель китайского',
+      name: 'Арсен',
+      role: 'Преподаватель по математике',
       experience: '5 лет опыта',
       hsk: 'HSK 6',
-      bio: 'Краткое описание преподавателя. Специализация, методика, достижения.',
+      bio: 'Один из сильнейших преподавателей , чьи студенты достигают одних из лучших результатов по математике на CSCA благодаря чёткой системе объяснения и практике.',
+      image: '/images/teacherCSCA1.jpg',
     },
     {
-      name: 'Имя Преподавателя',
-      role: 'Преподаватель китайского',
+      name: 'Роберт',
+      role: 'Преподаватель физики и математики',
       experience: '3 года опыта',
       hsk: 'HSK 5',
-      bio: 'Краткое описание преподавателя. Специализация, методика, достижения.',
+      bio: 'Получивший максимальный результат (100/100) на CSCA. Отлично ориентируется в формате экзамена и эффективно готовит студентов. Действующий студент Zhejiang University — одного из лучших вузов Китая.',
+      image: '/images/teacherCSCA2.jpg',
     },
     {
-      name: 'Имя Преподавателя',
-      role: 'Преподаватель китайского',
+      name: 'Геннадий',
+      role: 'Преподаватель по химии',
       experience: '7 лет опыта',
       hsk: 'HSK 6',
-      bio: 'Краткое описание преподавателя. Специализация, методика, достижения.',
+      bio: 'Призёр областных, а также республиканских олимпиад. Сильная академическая база и глубокое понимание предмета помогают ему эффективно готовить учеников.',
+      image: '/images/teacherCSCA3.jpg',
     },
     {
-      name: 'Имя Преподавателя',
-      role: 'Преподаватель китайского',
-      experience: '4 года опыта',
-      hsk: 'HSK 5',
-      bio: 'Краткое описание преподавателя. Специализация, методика, достижения.',
+      name: 'Лина',
+      role: 'Преподаватель по гуманитарному и техническому китайскому языку',
+      experience: '7 лет опыта',
+      hsk: 'HSK 6',
+      bio: 'Носитель языка с практическим опытом. Специализируется на работе с текстами и обучает стратегиям быстрого и точного поиска правильных ответов.',
+      image: '/images/teacherCSCA4.jpg',
     },
   ]
 
@@ -34,13 +38,12 @@ export default function Teachers() {
     <section
       className="relative py-24 px-6 overflow-hidden"
       style={{
-        backgroundImage: "url('/images/teachers_bg.png')", // PLACEHOLDER: replace with your image
+        backgroundImage: "url('/images/teachers_bg.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
       {/* Overlay */}
-     
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
@@ -59,18 +62,13 @@ export default function Teachers() {
               key={i}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              {/* Image placeholder */}
-              <div className="w-full h-56 bg-crimson/10 flex items-center justify-center border-b-4 border-gold">
-                {/*
-                  PLACEHOLDER: Replace this div with:
-                  <img src="/images/teacher-1.webp" alt={t.name} className="w-full h-full object-cover" />
-                */}
-                <div className="flex flex-col items-center gap-2 text-crimson/30">
-                  <svg viewBox="0 0 24 24" className="w-16 h-16" fill="currentColor">
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                  </svg>
-                  <span className="text-xs font-medium">Фото преподавателя</span>
-                </div>
+              {/* Teacher image */}
+              <div className="w-full h-56 border-b-4 border-gold">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Text */}
@@ -86,15 +84,7 @@ export default function Teachers() {
                   {t.bio}
                 </p>
 
-                {/* Tags */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="bg-crimson/10 text-crimson text-xs px-3 py-1 rounded-full font-medium">
-                    {t.hsk}
-                  </span>
-                  <span className="bg-gold/20 text-yellow-700 text-xs px-3 py-1 rounded-full font-medium">
-                    {t.experience}
-                  </span>
-                </div>
+                
               </div>
             </div>
           ))}

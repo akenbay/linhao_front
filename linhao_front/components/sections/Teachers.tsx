@@ -5,7 +5,7 @@ export default function Teachers() {
       role: 'Преподаватель по математике',
       experience: '5 лет опыта',
       hsk: 'HSK 6',
-      bio: 'Один из сильнейших преподавателей , чьи студенты достигают одних из лучших результатов по математике на CSCA благодаря чёткой системе объяснения и практике.',
+      bio: 'Один из сильнейших преподавателей, чьи студенты достигают одних из лучших результатов по математике на CSCA благодаря чёткой системе объяснения и практике.',
       image: '/images/teacherCSCA1.jpg',
     },
     {
@@ -32,6 +32,14 @@ export default function Teachers() {
       bio: 'Носитель языка с практическим опытом. Специализируется на работе с текстами и обучает стратегиям быстрого и точного поиска правильных ответов.',
       image: '/images/teacherCSCA4.jpg',
     },
+    {
+      name: 'Александр',
+      role: 'Преподаватель по гуманитарному и техническому китайскому языку',
+      experience: '4 года опыта',
+      hsk: 'HSK 5',
+      bio: 'Обучался в Китае, уровень HSK 6. Готовит к CSCA, делает упор на академическую лексику, развитие понимания сложных текстов и повышение скорости выполнения заданий.',
+      image: '/images/teacherCSCA5.jpg',
+    },
   ]
 
   return (
@@ -43,8 +51,6 @@ export default function Teachers() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay */}
-
       <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* Title */}
@@ -52,11 +58,11 @@ export default function Teachers() {
           <h2 className="font-serif text-crimson text-3xl md:text-5xl font-bold mb-4">
             Наши преподаватели по CSCA
           </h2>
-          <div className="h-0.5 w-32 mx-auto bg-linear-to-r from-transparent via-vermillion to-transparent"/>
+          <div className="h-0.5 w-32 mx-auto bg-linear-to-r from-transparent via-vermillion to-transparent" />
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {teachers.map((t, i) => (
             <div
               key={i}
@@ -67,7 +73,7 @@ export default function Teachers() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
 
@@ -79,16 +85,14 @@ export default function Teachers() {
                 <p className="text-vermillion text-xs font-semibold tracking-wide mb-3">
                   {t.role}
                 </p>
-
                 <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
                   {t.bio}
                 </p>
-
-                
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

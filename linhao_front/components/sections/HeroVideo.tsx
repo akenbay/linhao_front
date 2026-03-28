@@ -117,13 +117,15 @@ export default function HeroVideo() {
             </div>
 
             <h1 className="text-vermillion font-serif text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              Откройте мир<br/>
-              <span className="text-vermillion">китайского языка</span>
+              О нас:<br/>
+             
             </h1>
 
             <p className="text-black/70 text-lg max-w-xl mb-10 leading-relaxed">
-              Профессиональная школа китайского языка с подтверждёнными результатами.
-              Более 500 выпускников. Сертифицированные преподаватели.
+              Китайский язык для нас — это как второй родной язык, и мы влюбляем в культуру и язык Китая! 
+            </p>
+            <p className="text-black/70 text-lg max-w-xl mb-10 leading-relaxed">
+              В школе работает команда преподавателей с профильным образованием и опытом подготовки к экзаменам. Все педагоги владеют китайским языком на уровне HSK 5+ и объясняют материал доступно и системно.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -139,9 +141,9 @@ export default function HeroVideo() {
 
             <div className="grid grid-cols-3 gap-6 border-t border-crimson/20 pt-8 max-w-sm">
               {[
-                { num: '500+', label: 'Выпускников' },
-                { num: '5 лет', label: 'Опыта' },
-                { num: '97%',  label: 'Сдали HSK' },
+                { num: '200+', label: 'Студентов поступившие в Китай' },
+                { num: '96%', label: 'Успешно сдали HSK' },
+                { num: '87%',  label: 'Успешно сдали CSCA' },
               ].map(s => (
                 <div key={s.label} className="text-center">
                   <p className="text-gold text-2xl font-serif font-bold">{s.num}</p>

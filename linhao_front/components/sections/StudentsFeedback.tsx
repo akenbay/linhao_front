@@ -1,23 +1,21 @@
 export default function StudentFeedback() {
   const screenshots = [
-    { src: '/images/studentf1.jpg', rotate: '-rotate-1' },
-    { src: '/images/studentf2.jpg', rotate: 'rotate-2'  },
-    { src: '/images/studentf3.jpg', rotate: '-rotate-2' },
-    { src: '/images/studentf4.jpg', rotate: 'rotate-1'  },
-    { src: '/images/studentf5.jpg', rotate: 'rotate-2'  },
-    { src: '/images/studentf6.jpg', rotate: '-rotate-1' },
-    { src: '/images/studentf7.jpg', rotate: '-rotate-1' },
-    { src: '/images/studentf8.jpg', rotate: 'rotate-2'  },
-    { src: '/images/studentf9.jpg', rotate: '-rotate-2' },
+    { src: '/images/studentf1.jpg',  rotate: '-rotate-1' },
+    { src: '/images/studentf3.jpg',  rotate: '-rotate-2' },
+    { src: '/images/studentf4.jpg',  rotate: 'rotate-1'  },
+    { src: '/images/studentf5.jpg',  rotate: 'rotate-2'  },
+    { src: '/images/studentf6.jpg',  rotate: '-rotate-1' },
+    { src: '/images/studentf7.jpg',  rotate: '-rotate-1' },
+    { src: '/images/studentf8.jpg',  rotate: 'rotate-2'  },
+    { src: '/images/studentf9.jpg',  rotate: '-rotate-2' },
     { src: '/images/studentf10.jpg', rotate: 'rotate-1'  },
     { src: '/images/studentf11.jpg', rotate: 'rotate-2'  },
     { src: '/images/studentf12.jpg', rotate: '-rotate-1' },
   ]
 
-  // split into 3 columns manually
-  const col1 = [screenshots[0], screenshots[3]]
-  const col2 = [screenshots[1], screenshots[4]]
-  const col3 = [screenshots[2], screenshots[5]]
+  const col1 = [screenshots[0], screenshots[3], screenshots[6], screenshots[9]]
+  const col2 = [screenshots[1], screenshots[4], screenshots[7], screenshots[10]]
+  const col3 = [screenshots[2], screenshots[5], screenshots[8]]
   const cols = [col1, col2, col3]
 
   return (
@@ -42,14 +40,15 @@ export default function StudentFeedback() {
                 <div
                   key={i}
                   className={`
-                    ${s.rotate} hover:rotate-0 hover:scale-102
+                    ${s.rotate} hover:rotate-0 hover:scale-105
                     transition-all duration-300 cursor-pointer
+                    rounded-2xl overflow-hidden shadow-2xl border border-white/5
                   `}
                 >
                   <img
                     src={s.src}
-                    alt={`Отзыв`}
-                    className="w-full rounded-2xl shadow-2xl border border-white/5"
+                    alt="Отзыв"
+                    className="w-full h-auto block"
                   />
                 </div>
               ))}

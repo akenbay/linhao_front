@@ -56,9 +56,6 @@ export default function AboutDiagnostic() {
                 <h4 className="font-serif text-cream text-xl font-bold mb-2">
                   Запишитесь прямо сейчас
                 </h4>
-                <p className="text-cream/70 text-sm mb-6">
-                  И уже через 1 месяц вы начнёте произносить фразы правильно — если следовать плану
-                </p>
                 <a
                   href="https://t.me/YourSchoolHandle"
                   className="inline-block bg-gold text-crimson font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors"

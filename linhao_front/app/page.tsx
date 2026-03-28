@@ -6,6 +6,7 @@ import Programs from '@/components/sections/Programs'
 import Students from '@/components/sections/Students'
 import AboutSection from '@/components/sections/AboutSection'
 import AboutCSCA from '@/components/sections/AboutCSCA'
+import StudentFeedback from '@/components/sections/StudentsFeedback'
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <AboutSection/>
       <AboutCSCA/>
       <Teachers/>
+      <StudentFeedback/>
       <Programs/>
       <Students/>
             

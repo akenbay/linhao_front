@@ -7,6 +7,8 @@ import Students from '@/components/sections/Students'
 import AboutSection from '@/components/sections/AboutSection'
 import AboutCSCA from '@/components/sections/AboutCSCA'
 import StudentFeedback from '@/components/sections/StudentsFeedback'
+import Benefits from '@/components/sections/Benefits'
+import Mandarine3 from '@/components/sections/Mandarine3'
 
 export default function HomePage() {
   return (
@@ -15,8 +17,10 @@ export default function HomePage() {
       <SchoolHeader />  
       <HeroVideo />
       <AboutSection/>
+      <Benefits/>
       <AboutCSCA/>
       <Teachers/>
+      <Mandarine3/>
       <StudentFeedback/>
       <Programs/>
       <Students/>

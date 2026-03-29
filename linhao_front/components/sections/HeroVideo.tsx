@@ -31,7 +31,7 @@ export default function HeroVideo() {
 
 
   return (
-    <section
+    <section id="hero"
       className="relative min-h-screen flex flex-col overflow-hidden pt-16"
       style={{ backgroundImage: "url('/images/hero_bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >

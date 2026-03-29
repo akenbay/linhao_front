@@ -23,7 +23,7 @@ export default function AboutDiagnostic() {
   ]
 
   return (
-    <section className="bg-cream py-24 px-6">
+    <section id="csca" className="bg-cream py-24 px-6">
       <div className="max-w-6xl mx-auto">
 
         <div className="bg-white rounded-3xl shadow-lg overflow-hidden">

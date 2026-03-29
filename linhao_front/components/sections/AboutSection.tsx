@@ -1,6 +1,6 @@
 export default function AboutSection() {
   return (
-    <section className="bg-cream py-24 px-6">
+    <section id="about" className="bg-cream py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Bento grid */}

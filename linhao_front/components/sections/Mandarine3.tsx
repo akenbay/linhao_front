@@ -20,7 +20,7 @@ export default function MandarineCourse() {
   const [imgError, setImgError] = useState(false)
 
   return (
-    <section className="bg-cream pt-8 pb-20 px-6">
+    <section id="mandarin" className="bg-cream pt-8 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-stretch gap-10">
 

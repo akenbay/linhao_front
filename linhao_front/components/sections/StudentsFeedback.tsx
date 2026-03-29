@@ -32,7 +32,7 @@ export default function StudentFeedback() {
   const getIndex = (offset: number) => (current + offset + total) % total
 
   return (
-    <section className="bg-[#0f0c0a] py-24 px-6 overflow-hidden">
+    <section id="reviews"className="bg-[#0f0c0a] py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Title */}

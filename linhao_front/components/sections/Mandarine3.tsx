@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 
 const TANGERINES = [
   { size: 120, top: '5%',  left: '3%',  blur: 8,  opacity: 0.25, rotate: -15 },
@@ -16,72 +17,70 @@ const TANGERINES = [
 ]
 
 export default function MandarineCourse() {
+  const [imgError, setImgError] = useState(false)
+
   return (
-    <section className="bg-cream py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-stretch gap-8">
+    <section className="bg-cream pt-8 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-stretch gap-10">
 
           {/* LEFT — Author card */}
           <div
-            className="shrink-0 w-full lg:w-72 rounded-3xl flex flex-col items-center justify-center text-center p-8 gap-4"
+            className="shrink-0 w-full lg:w-96 rounded-3xl flex flex-col items-center justify-center text-center p-12 gap-6"
             style={{
               background: 'white',
               border: '1px solid rgba(0,0,0,0.06)',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+              boxShadow: '0 8px 40px rgba(0,0,0,0.08)',
             }}
           >
-            {/* Author image placeholder */}
+            {/* Author image */}
             <div
-              className="w-28 h-28 rounded-full overflow-hidden border-4 border-crimson/20 shrink-0"
+              className="w-44 h-44 rounded-full overflow-hidden border-4 border-crimson/20 shrink-0 flex items-center justify-center"
               style={{ background: '#f3f4f6' }}
             >
-              {/* Replace src with actual author image */}
-              <img
-                src="/images/author.jpg"
-                alt="Чжан Лина"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none'
-                }}
-              />
-              {/* Fallback initials */}
-              <div className="w-full h-full flex items-center justify-center text-crimson font-serif font-bold text-2xl">
-                ЧЛ
-              </div>
+              {imgError ? (
+                <span className="text-crimson font-serif font-bold text-4xl">ЧЛ</span>
+              ) : (
+                <img
+                  src="/images/teacherCSCA4.jpg"
+                  alt="Чжан Лина"
+                  className="w-full h-full object-cover"
+                  onError={() => setImgError(true)}
+                />
+              )}
             </div>
 
             <div>
-              <p className="font-serif font-bold text-crimson text-lg leading-tight">Чжан Лина</p>
-              <p className="font-sans text-gray-400 text-xs mt-1">Китаевед · HSK 5</p>
+              <p className="font-serif font-bold text-crimson text-2xl leading-tight">Чжан Лина</p>
+              <p className="font-sans text-gray-400 text-sm mt-2">Китаевед · HSK 5</p>
             </div>
 
             <div className="h-px w-full bg-gray-100" />
 
-            <p className="font-serif font-black text-crimson text-3xl leading-none">MANDARINE</p>
-            <div className="flex items-center gap-3">
-              <div className="h-px w-6 bg-crimson/30" />
-              <p className="text-crimson font-bold text-lg tracking-widest">3.0</p>
-              <div className="h-px w-6 bg-crimson/30" />
+            <p className="font-serif font-black text-crimson text-5xl leading-none">MANDARINE</p>
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-crimson/30" />
+              <p className="text-crimson font-bold text-2xl tracking-widest">3.0</p>
+              <div className="h-px w-8 bg-crimson/30" />
             </div>
-            <p className="text-gray-400 text-xs tracking-widest">中文 · КИТАЙСКИЙ</p>
+            <p className="text-gray-400 text-sm tracking-widest">中文 · КИТАЙСКИЙ</p>
 
             <div className="h-px w-full bg-gray-100" />
 
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Нихао! Спасибо за интерес к курсу 🇨🇳❤️
+            <p className="text-gray-600 text-base leading-relaxed">
+              Нихао! Спасибо за интерес к курсу ❤️
             </p>
-            <span className="text-4xl">🍊</span>
+            <span className="text-6xl">🍊</span>
           </div>
 
           {/* RIGHT — Course info with floating tangerines */}
           <div
-            className="relative flex-1 rounded-3xl p-10 lg:p-12 flex flex-col justify-center overflow-hidden"
+            className="relative flex-1 rounded-3xl p-12 lg:p-16 flex flex-col justify-center overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%)',
               border: '1px solid rgba(249,115,22,0.15)',
             }}
           >
-            {/* Floating tangerines inside this div only */}
             {TANGERINES.map((t, i) => (
               <div
                 key={i}
@@ -101,44 +100,43 @@ export default function MandarineCourse() {
               </div>
             ))}
 
-            {/* Content on top */}
             <div className="relative z-10">
-              <h2 className="font-serif font-bold text-crimson text-4xl md:text-5xl leading-tight mb-3">
+              <h2 className="font-serif font-bold text-crimson text-5xl md:text-6xl leading-tight mb-4">
                 Китайский с нуля 🇨🇳
               </h2>
 
-              <p className="font-sans text-gray-500 italic text-sm mb-6">
+              <p className="font-sans text-gray-500 italic text-base mb-8">
                 Авторский курс от китаеведа Чжан Лины
               </p>
 
-              <div className="h-px w-full bg-orange-200 mb-6" />
+              <div className="h-px w-full bg-orange-200 mb-8" />
 
-              <p className="font-sans text-gray-700 text-sm leading-relaxed mb-8">
+              <p className="font-sans text-gray-700 text-base leading-relaxed mb-10">
                 Интенсив-курс направлен на быстрое и качественное изучение{' '}
                 <strong className="text-gray-900">с 0 до HSK 1</strong> — «без воды»,
                 по строгим стандартам китайской методики преподавания{' '}
                 <strong className="text-gray-900">BLCU</strong> (Beijing Language and Culture University).
               </p>
 
-              <p className="font-sans font-bold text-crimson text-xs tracking-widest uppercase mb-4">
+              <p className="font-sans font-bold text-crimson text-sm tracking-widest uppercase mb-5">
                 На курсе вы научитесь:
               </p>
 
-              <ul className="space-y-3 mb-10">
+              <ul className="space-y-4 mb-12">
                 {[
                   'Тональность, пиньинь и произношение',
                   'Базовые темы HSK 1',
                   'Аудирование, чтение и письменность',
                   'Говорение — в подарок 🎁',
                 ].map((text, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <span className="text-crimson font-serif font-bold text-lg shrink-0">测</span>
-                    <span className="font-sans text-gray-900 text-sm">{text}</span>
+                  <li key={i} className="flex items-center gap-4">
+                    <span className="text-crimson font-serif font-bold text-2xl shrink-0">测</span>
+                    <span className="font-sans text-gray-900 text-base">{text}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className="bg-crimson text-cream font-bold text-sm px-7 py-3.5 rounded-xl hover:opacity-90 transition-all active:scale-95">
+              <button className="bg-crimson text-cream font-bold text-base px-10 py-4 rounded-xl hover:opacity-90 transition-all active:scale-95">
                 Записаться на курс
               </button>
             </div>

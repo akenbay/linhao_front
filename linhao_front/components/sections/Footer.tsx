@@ -1,12 +1,17 @@
 'use client'
 
 const links = [
-  { href: '#hero',     label: 'Главная' },
+  { href: '#header',     label: 'Главная' },
   { href: '#about',    label: 'О нас' },
   { href: '#benefits', label: 'Почему китайский?' },
   { href: '#csca',     label: 'CSCA' },
   { href: '#mandarin', label: 'Китайский с нуля' },
   { href: '#reviews',  label: 'Отзывы' },
+]
+
+const legalLinks = [
+  { href: '/oferta',  label: 'Оферта' },
+  { href: '/pravila', label: 'Правила' },
 ]
 
 function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -92,10 +97,25 @@ export default function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-crimson/20 to-transparent mb-5 sm:mb-6" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-400 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} linhao.chinese. Все права защищены.
           </p>
+
+          {/* ── Legal links ── */}
+          <div className="flex items-center gap-4">
+            {legalLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-gray-400 hover:text-crimson text-xs transition-colors underline underline-offset-2"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Social icons */}
           <div className="flex items-center gap-4">
             <a href="https://t.me/YourSchoolHandle" className="text-gray-400 hover:text-crimson transition-colors">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

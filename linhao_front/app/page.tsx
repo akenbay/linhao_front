@@ -22,11 +22,10 @@ export default function HomePage() {
       <AboutCSCA/>
       <Teachers/>
       <CSCAPrices/>
+      <StudentFeedback/>
       <Mandarine3/>
       <Programs/>
-      <StudentFeedback/>
-      <Footer/>
-            
+      <Footer/>    
     </>
   )
 }

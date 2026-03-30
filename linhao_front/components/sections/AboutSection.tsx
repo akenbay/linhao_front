@@ -1,52 +1,10 @@
 export default function AboutSection() {
   return (
-    <section id="about" className="bg-cream py-24 px-6">
+    <section id="about1" className="bg-cream py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-          {/* ── LEFT COLUMN — Big hero card ── */}
-          <div className="bg-vermillion rounded-3xl p-8 flex flex-col justify-between min-h-125">
-
-            {/* Text */}
-            <div>
-              <h2 className="font-serif text-cream text-2xl md:text-3xl font-bold leading-snug mb-5">
-                О нас:
-              </h2>
-              <p className="text-cream/80 text-sm leading-relaxed mb-6">
-                Китайский язык для нас — это как второй родной язык, и мы влюбляем в культуру и язык Китая!
-              </p>
-              <p className="text-cream/80 text-sm leading-relaxed mb-6">
-                В школе работает команда преподавателей с профильным образованием и опытом подготовки к экзаменам. Все педагоги владеют китайским языком на уровне HSK 5+ и объясняют материал доступно и системно.
-              </p>
-              <a
-                href="/about"
-                className="text-cream font-semibold text-sm underline underline-offset-4 hover:text-gold transition-colors"
-              >
-                Познакомиться с преподавателями →
-              </a>
-            </div>
-
-            {/* Bottom student circle row */}
-            <div className="flex items-center gap-3 mt-8">
-              {[1, 2, 3].map((n) => (
-                <div
-                  key={n}
-                  className="w-20 h-20 rounded-full bg-cream/20 border-2 border-cream/40 flex items-center justify-center overflow-hidden shrink-0"
-                >
-                  {/* PLACEHOLDER: replace with <img src="/images/graduate-n.webp" className="w-full h-full object-cover" /> */}
-                  <svg viewBox="0 0 24 24" className="w-8 h-8 text-cream/40" fill="currentColor">
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                  </svg>
-                </div>
-              ))}
-              <div className="w-20 h-20 rounded-full bg-cream/10 border-2 border-dashed border-cream/30 flex items-center justify-center shrink-0">
-                <span className="text-cream/50 text-2xl font-bold">+</span>
-              </div>
-            </div>
-
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           {/* ── MIDDLE COLUMN ── */}
           <div className="flex flex-col gap-4">
@@ -66,7 +24,6 @@ export default function AboutSection() {
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Средний балл сдачи HSK наших учеников: 193/200 за HSK 1, 186/200 за HSK 2 и 252/300 за HSK 3
                 </p>
-                
               </div>
 
               {/* Image placeholder */}
@@ -101,7 +58,6 @@ export default function AboutSection() {
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Учёба в компактных группах — максимум внимания каждому. Всегда есть возможность задать вопрос и получить поддержку
                 </p>
-    
               </div>
 
               {/* Image placeholder */}

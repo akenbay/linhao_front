@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#hero',      label: 'Главная' },
+  { href: '#header',      label: 'Главная' },
   { href: '#about',     label: 'О нас' },
   { href: '#benefits',  label: 'Почему китайский?' },
   { href: '#csca',      label: 'CSCA' },

@@ -1,6 +1,6 @@
 export default function SchoolHeader() {
   return (
-    <section className="bg-cream min-h-screen flex flex-col items-center justify-center gap-8 px-6 pt-24 pb-16"
+    <section id="header" className="bg-cream min-h-screen flex flex-col items-center justify-center gap-8 px-6 pt-24 pb-16"
   style={{
     backgroundImage: "url('/images/schoolheader_bg.png')",
     backgroundSize: 'cover',

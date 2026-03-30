@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 
 const programs = [
   {
-    char: '语',
+    char: '汉',
     title: 'Курс мандарин',
     subtitle: 'Разговорный китайский',
     price: '45 000',
@@ -18,7 +18,7 @@ const programs = [
     ],
   },
   {
-    char: '汉',
+    char: '语',
     title: 'HSK 2–6',
     subtitle: 'Подготовка к экзамену',
     price: '49 900',

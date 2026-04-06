@@ -10,6 +10,7 @@ import StudentFeedback from '@/components/sections/StudentsFeedback'
 import Benefits from '@/components/sections/Benefits'
 import Mandarine3 from '@/components/sections/Mandarine3'
 import CSCAPrices from '@/components/sections/CSCAPrices'
+import CSCARegularPrices from '@/components/sections/CSCARegularPrices'
 import Footer from '@/components/sections/Footer'
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <AboutCSCA/>
       <Teachers/>
       <CSCAPrices/>
+      <CSCARegularPrices/>
       <StudentFeedback/>
       <Mandarine3/>
       <Programs/>

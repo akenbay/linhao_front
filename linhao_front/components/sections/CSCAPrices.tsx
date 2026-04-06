@@ -52,7 +52,13 @@ export default function PricingCSCA() {
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}
-        <div className="relative bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden mb-8 lg:mb-12">
+        <div className="relative rounded-2xl lg:rounded-3xl shadow-xl overflow-hidden mb-8 lg:mb-12"
+          style={{ background: 'linear-gradient(135deg, #fff 0%, #fff5f0 60%, #ffe8df 100%)' }}
+        >
+          {/* Fiery glow backdrop */}
+          <div className="absolute inset-0 pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(244,64,39,0.08) 0%, transparent 60%)' }}
+          />
           <img
             src="/images/maneki.png"
             alt=""
@@ -61,13 +67,27 @@ export default function PricingCSCA() {
           />
           <div
             className="absolute inset-0 pointer-events-none hidden lg:block"
-            style={{ background: 'linear-gradient(to right, white 40%, transparent 75%)' }}
+            style={{ background: 'linear-gradient(to right, #fff5f0 38%, transparent 72%)' }}
           />
-          <div className="relative z-10 px-7 sm:px-12 lg:px-16 py-7 lg:py-10">
-            <p className="text-crimson font-serif text-sm lg:text-base tracking-widest uppercase mb-2 opacity-60">价格</p>
-            <h2 className="font-serif text-crimson text-2xl sm:text-3xl md:text-5xl font-bold">
-              Стоимость подготовки к CSCA
+          {/* Decorative Chinese char */}
+          <span className="absolute right-[38%] top-1/2 -translate-y-1/2 text-[7rem] font-black text-vermillion/6 select-none pointer-events-none hidden lg:block leading-none">
+            強
+          </span>
+          <div className="relative z-10 px-7 sm:px-12 lg:px-16 py-8 lg:py-11 lg:max-w-[60%]">
+            {/* Intensiv badge */}
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-1.5 text-xs font-black px-4 py-1.5 rounded-full text-white tracking-widest uppercase shadow-lg shadow-vermillion/40"
+                style={{ background: 'linear-gradient(90deg, #F44027, #c0392b)' }}
+              >
+                🔥 Интенсив
+              </span>
+              <span className="text-vermillion/30 text-sm font-bold tracking-widest uppercase">· 冲刺备考 ·</span>
+            </div>
+            <p className="text-vermillion font-serif text-sm lg:text-base tracking-widest uppercase mb-2 opacity-50">价格</p>
+            <h2 className="font-serif text-crimson text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
+              Стоимость интенсивной подготовки к CSCA
             </h2>
+            <p className="text-vermillion/60 text-sm mt-3 font-medium">Быстрый темп · Максимальный результат</p>
           </div>
         </div>
 
@@ -151,6 +171,14 @@ export default function PricingCSCA() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Group size note */}
+                <div className="px-7 lg:px-9 mb-4 flex items-center gap-2">
+                  <span className={`text-xs ${isFeatured ? 'text-cream/50' : 'text-gray-400'}`}>👥</span>
+                  <p className={`text-xs ${isFeatured ? 'text-cream/50' : 'text-gray-400'}`}>
+                    Мини-группы от 2–5 человек
+                  </p>
+                </div>
 
                 {/* CTA */}
                 <div className="px-7 lg:px-9 pb-7 lg:pb-10 mt-auto">

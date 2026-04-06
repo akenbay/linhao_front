@@ -73,7 +73,7 @@ export default function Teachers() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

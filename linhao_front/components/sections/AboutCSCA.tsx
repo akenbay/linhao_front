@@ -34,7 +34,7 @@ export default function AboutDiagnostic() {
               Подготовка к CSCA
             </h2>
             <p className="text-gray-400 text-sm mt-1">
-              1 месяц • 2 раза в неделю • Онлайн
+              CSCA — твой билет в Китай, готовься сегодня, чтобы учиться там завтра.
             </p>
           </div>
 

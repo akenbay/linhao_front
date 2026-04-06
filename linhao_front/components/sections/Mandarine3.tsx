@@ -67,9 +67,7 @@ export default function MandarineCourse() {
 
             <div className="h-px w-full bg-gray-100" />
 
-            <p className="text-gray-600 text-base leading-relaxed">
-              Нихао! Спасибо за интерес к курсу ❤️
-            </p>
+            
             <span className="text-6xl">🍊</span>
           </div>
 
@@ -112,10 +110,7 @@ export default function MandarineCourse() {
               <div className="h-px w-full bg-orange-200 mb-8" />
 
               <p className="font-sans text-gray-700 text-base leading-relaxed mb-10">
-                Интенсив-курс направлен на быстрое и качественное изучение{' '}
-                <strong className="text-gray-900">с 0 до HSK 1</strong> — «без воды»,
-                по строгим стандартам китайской методики преподавания{' '}
-                <strong className="text-gray-900">BLCU</strong> (Beijing Language and Culture University).
+                Интенсив-курс направлен на быстрое и качественное изучение с 0 до HSK 1 — «без воды», по строгим стандартам китайской методики преподавания BLCU (Beijing Language and Culture University) всего за 8 уроков !!
               </p>
 
               <p className="font-sans font-bold text-crimson text-sm tracking-widest uppercase mb-5">

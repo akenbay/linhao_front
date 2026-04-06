@@ -129,7 +129,7 @@ export default function WhyChinese() {
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 lg:mb-24">
-          <p className="text-red-400/70 font-serif text-lg lg:text-xl tracking-widest mb-3">为什么</p>
+          <p className="text-red-400/70 font-serif text-lg lg:text-xl tracking-widest mb-3">为什么要学习中文？</p>
           <h2 className="font-serif text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-5">
             Почему именно китайский язык?
           </h2>

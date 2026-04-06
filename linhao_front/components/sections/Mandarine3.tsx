@@ -99,6 +99,23 @@ export default function MandarineCourse() {
             ))}
 
             <div className="relative z-10">
+              {/* Key claim badge */}
+              <div className="inline-flex items-center gap-3 mb-8 relative">
+                {/* Left lantern knot */}
+                <span className="text-crimson/40 text-xl select-none">✦</span>
+                <div
+                  className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-crimson/25"
+                  style={{ background: 'linear-gradient(90deg, rgba(154,8,9,0.07) 0%, rgba(154,8,9,0.12) 100%)' }}
+                >
+                  <span className="font-serif text-crimson/50 text-base font-bold tracking-widest select-none">零</span>
+                  <p className="font-serif font-bold text-crimson text-sm md:text-base tracking-wide">
+                    с 0 до HSK 1 всего за <span className="text-xl font-black">8</span> уроков
+                  </p>
+                  <span className="font-serif text-crimson/50 text-base font-bold tracking-widest select-none">一</span>
+                </div>
+                <span className="text-crimson/40 text-xl select-none">✦</span>
+              </div>
+
               <h2 className="font-serif font-bold text-crimson text-5xl md:text-6xl leading-tight mb-4">
                 Китайский с нуля 🇨🇳
               </h2>

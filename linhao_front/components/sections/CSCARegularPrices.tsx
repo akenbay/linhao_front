@@ -2,38 +2,47 @@
 
 const plans = [
   {
-    label: '1 предмет',
-    chinese: '一科',
-    subjects: ['Математика, химия, физика или гуманитарный/технический китайский'],
-    lessons: 4,
-    price: '30 000',
-    badge: null,
-    featured: false,
-  },
-  {
-    label: '1 предмет + китайский',
-    chinese: '双科',
-    subjects: ['Один из: математика, химия, физика', '+ китайский язык'],
-    lessons: 8,
-    price: '50 000',
-    badge: null,
-    featured: false,
-  },
-  {
-    label: '2 предмета + китайский',
-    chinese: '三科',
-    subjects: ['Два из: математика, химия, физика', '+ китайский язык'],
+    label: 'Китайский язык',
+    chinese: '语言',
+    subjects: ['Гуманитарный / технический китайский'],
     lessons: 12,
-    price: '75 000',
-    badge: '✦ Выгодно',
-    featured: true,
+    price: '66 000',
+    badge: null,
+    featured: false,
   },
   {
-    label: '3 предмета + китайский',
-    chinese: '全科',
-    subjects: ['Математика, химия, физика', '+ китайский язык'],
+    label: 'Математика',
+    chinese: '数学',
+    subjects: ['Преподаватель — Арсен'],
     lessons: 16,
-    price: '95 000',
+    price: '88 000',
+    badge: null,
+    featured: false,
+  },
+  {
+    label: 'Физика',
+    chinese: '物理',
+    subjects: ['Преподаватель — Роберт'],
+    lessons: 10,
+    price: '55 000',
+    badge: null,
+    featured: false,
+  },
+  {
+    label: 'Математика',
+    chinese: '数学',
+    subjects: ['Преподаватель — Роберт'],
+    lessons: 12,
+    price: '66 000',
+    badge: null,
+    featured: false,
+  },
+  {
+    label: 'Химия',
+    chinese: '化学',
+    subjects: ['Подготовка к CSCA'],
+    lessons: 12,
+    price: '66 000',
     badge: null,
     featured: false,
   },
@@ -80,7 +89,7 @@ export default function CSCARegularPrices() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:items-end">
           {plans.map((plan, i) => (
             <div
               key={i}
@@ -121,10 +130,10 @@ export default function CSCARegularPrices() {
 
               {/* Price */}
               <div className="px-6 mb-4">
-                <p className="font-serif font-black text-4xl lg:text-5xl leading-none text-gold">
+                <p className="font-serif font-black text-3xl lg:text-4xl leading-none text-gold">
                   {plan.price}
                 </p>
-                <p className="text-cream/40 text-sm mt-2">тенге / месяц</p>
+                <p className="text-cream/40 text-sm mt-2">тенге</p>
               </div>
 
               {/* Divider */}
@@ -137,7 +146,7 @@ export default function CSCARegularPrices() {
                 }`}>
                   {plan.lessons}
                 </span>
-                <p className="text-cream/50 text-sm">уроков в месяц</p>
+                <p className="text-cream/50 text-sm">уроков</p>
               </div>
 
               {/* Subjects */}

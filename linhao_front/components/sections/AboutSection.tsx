@@ -1,81 +1,93 @@
+'use client'
+
+const HSK_FEEDBACK = [
+  '/images/hsk_feedback/1.jpg',
+  '/images/hsk_feedback/2.jpg',
+  '/images/hsk_feedback/3.jpg',
+]
+
 export default function AboutSection() {
   return (
     <section id="about1" className="bg-cream py-24 px-6">
       <div className="max-w-7xl mx-auto">
-
-        {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-          {/* ── MIDDLE COLUMN ── */}
-          <div className="flex flex-col gap-4">
-
-            {/* Card 4 — Results — Blog post style */}
-            <div className="bg-[#fdf6ee] rounded-3xl overflow-hidden border border-gold/20 flex flex-col flex-1">
-
-              {/* Text content */}
-              <div className="p-6 flex flex-col gap-3">
-                {/* Tag */}
-                <span className="inline-block self-start text-xs font-semibold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">
-                  Результаты
-                </span>
-                <h3 className="font-serif text-crimson text-xl font-bold leading-snug">
-                  Доводим до результата
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Средний балл сдачи HSK наших учеников: 193/200 за HSK 1, 186/200 за HSK 2 и 252/300 за HSK 3
-                </p>
-              </div>
-
-              {/* Image placeholder */}
-              <div className="mt-auto w-full h-44 bg-gold/10 flex flex-col items-center justify-center gap-2 border-t border-gold/15">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-gold/40" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <path d="M21 15l-5-5L5 21" />
-                </svg>
-                <span className="text-gold/50 text-xs font-medium">Фото — скоро</span>
-              </div>
-
+          {/* LEFT — Мини-группы: full-bleed photo with overlay */}
+          <div
+            className="relative rounded-3xl overflow-hidden min-h-115 flex flex-col justify-end"
+            style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}
+          >
+            <img
+              src="/images/group_photo.jpg"
+              alt="Мини-группа"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+            {/* Gradient overlay */}
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 55%, transparent 100%)' }}
+            />
+            {/* Text */}
+            <div className="relative z-10 p-8">
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-gold bg-gold/15 border border-gold/30 px-3 py-1 rounded-full mb-4">
+                Формат
+              </span>
+              <h3 className="font-serif text-white text-3xl font-bold leading-tight mb-2">
+                Мини-группы<br />до 5 человек
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+                Максимум внимания каждому — всегда есть возможность задать вопрос и получить поддержку
+              </p>
             </div>
-
           </div>
 
-          {/* ── RIGHT COLUMN ── */}
-          <div className="flex flex-col gap-4">
+          {/* RIGHT — Результаты: stats + feedback screenshots */}
+          <div
+            className="rounded-3xl overflow-hidden flex flex-col min-h-115"
+            style={{ background: 'linear-gradient(160deg, #9A0809 0%, #7a0606 100%)', boxShadow: '0 8px 40px rgba(154,8,9,0.25)' }}
+          >
+            {/* Stats */}
+            <div className="p-8 flex flex-col gap-1">
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-gold bg-gold/15 border border-gold/30 px-3 py-1 rounded-full self-start mb-5">
+                Результаты
+              </span>
 
-            {/* Card 2 — Mini groups — Blog post style */}
-            <div className="bg-[#fdf6ee] rounded-3xl overflow-hidden border border-gold/20 flex flex-col flex-1">
-
-              {/* Text content */}
-              <div className="p-6 flex flex-col gap-3">
-                {/* Tag */}
-                <span className="inline-block self-start text-xs font-semibold uppercase tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full">
-                  Формат
-                </span>
-                <h3 className="font-serif text-crimson text-xl font-bold leading-snug">
-                  Мини-группы<br />до 5 человек
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Учёба в компактных группах — максимум внимания каждому. Всегда есть возможность задать вопрос и получить поддержку
-                </p>
+              <div className="flex gap-8">
+                <div>
+                  <p className="font-serif font-black text-gold text-5xl leading-none">200+</p>
+                  <p className="text-white/50 text-xs mt-1.5 leading-snug">баллов из 300<br />на HSK</p>
+                </div>
+                <div className="w-px bg-white/10" />
+                <div>
+                  <p className="font-serif font-black text-gold text-5xl leading-none">60+</p>
+                  <p className="text-white/50 text-xs mt-1.5 leading-snug">баллов<br />на HSKK</p>
+                </div>
               </div>
 
-              {/* Image placeholder */}
-              <div className="mt-auto w-full h-44 bg-crimson/5 flex flex-col items-center justify-center gap-2 border-t border-gold/15">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-crimson/25" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <path d="M21 15l-5-5L5 21" />
-                </svg>
-                <span className="text-crimson/30 text-xs font-medium">Фото — скоро</span>
-              </div>
-
+              <p className="text-white/40 text-xs mt-5 leading-relaxed max-w-xs">
+                Стабильный результат — наши ученики сдают HSK и HSKK выше среднего
+              </p>
             </div>
 
+            {/* Divider */}
+            <div className="mx-8 h-px bg-white/10" />
+
+            {/* Feedback screenshots — cards in a row */}
+            <div className="flex gap-3 px-8 pb-8 pt-4">
+              {HSK_FEEDBACK.map((src, i) => (
+                <div key={i} className="flex-1 rounded-xl overflow-hidden border border-white/10 shadow-lg flex items-center justify-center p-2">
+                  <img
+                    src={src}
+                    alt={`Результат ${i + 1}`}
+                    className="w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
       </div>
     </section>
-  );
+  )
 }

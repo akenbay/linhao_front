@@ -24,6 +24,9 @@ const notoSerif = Noto_Serif_SC({
 export const metadata: Metadata = {
   title: 'Chinese School — Learn Mandarin',
   description: 'Professional Chinese language school. Proven results, certified teachers.',
+  icons: {
+    icon: '/images/logo.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

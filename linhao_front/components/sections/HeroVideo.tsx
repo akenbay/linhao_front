@@ -5,28 +5,41 @@ import Link from 'next/link'
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [playing, setPlaying] = useState(true)
-
+  const [playing, setPlaying] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const circumference = 2 * Math.PI * 47
 
   useEffect(() => {
-    const unlock = () => {
-      if (videoRef.current) {
-        videoRef.current.muted = false
-      }
+    const video = videoRef.current
+    if (!video) return
+    const onPlay       = () => setPlaying(true)
+    const onPause      = () => setPlaying(false)
+    const onEnded      = () => { setPlaying(false); setProgress(0) }
+    const onTimeUpdate = () => {
+      if (video.duration) setProgress(video.currentTime / video.duration)
     }
-    document.addEventListener('click', unlock, { once: true })
-    return () => document.removeEventListener('click', unlock)
+    video.addEventListener('play',       onPlay)
+    video.addEventListener('pause',      onPause)
+    video.addEventListener('ended',      onEnded)
+    video.addEventListener('timeupdate', onTimeUpdate)
+    return () => {
+      video.removeEventListener('play',       onPlay)
+      video.removeEventListener('pause',      onPause)
+      video.removeEventListener('ended',      onEnded)
+      video.removeEventListener('timeupdate', onTimeUpdate)
+    }
   }, [])
 
-
   const togglePlay = () => {
-    if (!videoRef.current) return
-    if (playing) {
-      videoRef.current.pause()
+    const video = videoRef.current
+    if (!video) return
+    // Unmute on first interaction — browsers require muted for autoplay
+    if (video.muted) video.muted = false
+    if (video.paused) {
+      video.play()
     } else {
-      videoRef.current.play()
+      video.pause()
     }
-    setPlaying(!playing)
   }
 
 
@@ -57,38 +70,57 @@ export default function HeroVideo() {
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-crimson shadow-[0_0_60px_rgba(237,197,55,0.25)] overflow-hidden">
-                <video
-                  ref={videoRef}
-                  src="/videos/IMG_3807.MP4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 rounded-full flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-all duration-300">
-                <button
-                  onClick={togglePlay}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-14 h-14 bg-white/90 rounded-full flex items-center justify-center hover:bg-white shadow-lg"
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative">
+                {/* Progress ring */}
+                <svg
+                  className="absolute -inset-3 -rotate-90 pointer-events-none"
+                  style={{ width: 'calc(100% + 24px)', height: 'calc(100% + 24px)' }}
+                  viewBox="0 0 100 100"
+                  fill="none"
                 >
-                  {playing ? (
-                    <span className="flex gap-1.5">
-                      <span className="w-1.5 h-6 bg-crimson rounded-sm"/>
-                      <span className="w-1.5 h-6 bg-crimson rounded-sm"/>
-                    </span>
-                  ) : (
-                    <span className="w-0 h-0 ml-1.5" style={{
-                      borderTop: '11px solid transparent',
-                      borderBottom: '11px solid transparent',
-                      borderLeft: '18px solid #990808'
-                    }}/>
-                  )}
-                </button>
+                  <circle cx="50" cy="50" r="47" stroke="rgba(154,8,9,0.2)" strokeWidth="2.5" />
+                  <circle
+                    cx="50" cy="50" r="47"
+                    stroke="#EEC537"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={circumference * (1 - progress)}
+                    style={{ transition: 'stroke-dashoffset 0.25s linear' }}
+                  />
+                </svg>
+
+                <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full shadow-[0_0_60px_rgba(237,197,55,0.25)] overflow-hidden">
+                  <video
+                    ref={videoRef}
+                    src="/videos/hero.MP4"
+                    muted
+                    playsInline
+                    disablePictureInPicture
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Blocks native browser video overlay */}
+                  <div className="absolute inset-0" />
+                  {/* Play/pause button inside circle, bottom center */}
+                  <button
+                    onClick={togglePlay}
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-all z-10 backdrop-blur-md border border-white/30"
+                    style={{ background: 'rgba(255,255,255,0.2)' }}
+                  >
+                    {playing ? (
+                      <span className="flex gap-1">
+                        <span className="w-1.5 h-5 bg-gold rounded-full"/>
+                        <span className="w-1.5 h-5 bg-gold rounded-full"/>
+                      </span>
+                    ) : (
+                      <svg width="24" height="24" viewBox="0 0 18 18" fill="none" className="ml-1">
+                        <path d="M5 3.5C5 2.7 5.9 2.2 6.6 2.7L15.1 8.2C15.7 8.6 15.7 9.4 15.1 9.8L6.6 15.3C5.9 15.8 5 15.3 5 14.5V3.5Z"
+                          fill="#EEC537" strokeLinejoin="round" strokeLinecap="round"/>
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
 

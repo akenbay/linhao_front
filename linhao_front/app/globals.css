@@ -44,3 +44,10 @@
 body {
   font-family: var(--font-racama), sans-serif;
 }
+
+/* Hide native browser video overlay buttons */
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+  appearance: none;
+}

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 const plans = [
   {
@@ -59,9 +60,11 @@ export default function PricingCSCA() {
           <div className="absolute inset-0 pointer-events-none"
             style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(244,64,39,0.08) 0%, transparent 60%)' }}
           />
-          <img
+          <Image
             src="/images/maneki.png"
             alt=""
+            width={400}
+            height={400}
             className="absolute right-0 top-0 h-full w-auto object-cover object-left pointer-events-none select-none opacity-90 hidden lg:block"
             aria-hidden="true"
           />

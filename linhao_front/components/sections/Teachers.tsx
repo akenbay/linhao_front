@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Teachers() {
   const teachers = [
     {
@@ -69,11 +71,13 @@ export default function Teachers() {
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Teacher image */}
-              <div className="w-full h-56 border-b-4 border-gold">
-                <img
+              <div className="relative w-full h-56 border-b-4 border-gold">
+                <Image
                   src={t.image}
                   alt={t.name}
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                 />
               </div>
 

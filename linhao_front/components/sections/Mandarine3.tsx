@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 
 const TANGERINES = [
   { size: 120, top: '5%',  left: '3%',  blur: 8,  opacity: 0.25, rotate: -15 },
@@ -35,16 +36,18 @@ export default function MandarineCourse() {
           >
             {/* Author image */}
             <div
-              className="w-44 h-44 rounded-full overflow-hidden border-4 border-crimson/20 shrink-0 flex items-center justify-center"
+              className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-crimson/20 shrink-0 flex items-center justify-center"
               style={{ background: '#f3f4f6' }}
             >
               {imgError ? (
                 <span className="text-crimson font-serif font-bold text-4xl">ЧЛ</span>
               ) : (
-                <img
+                <Image
                   src="/images/teacherCSCA4.jpg"
                   alt="Чжан Лина"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="176px"
                   onError={() => setImgError(true)}
                 />
               )}

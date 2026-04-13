@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function SchoolHeader() {
   return (
     <section id="header" className="bg-cream min-h-screen flex flex-col items-center justify-center gap-8 px-6 pt-24 pb-16"
@@ -8,11 +10,13 @@ export default function SchoolHeader() {
   }}>
 
       {/* Logo */}
-      <div className="w-60 h-60 rounded-full border-4 border-crimson overflow-hidden shadow-xl">
-        <img
+      <div className="relative w-60 h-60 rounded-full border-4 border-crimson overflow-hidden shadow-xl">
+        <Image
           src="/images/logo.png"
           alt="School Logo"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
 

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 const HSK_FEEDBACK = [
   '/images/hsk_feedback/1.jpg',
@@ -17,10 +18,12 @@ export default function AboutSection() {
             className="relative rounded-3xl overflow-hidden min-h-115 flex flex-col justify-end"
             style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}
           >
-            <img
+            <Image
               src="/images/group_photo.jpg"
               alt="Мини-группа"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Gradient overlay */}
             <div
@@ -76,10 +79,13 @@ export default function AboutSection() {
             <div className="flex gap-3 px-8 pb-8 pt-4">
               {HSK_FEEDBACK.map((src, i) => (
                 <div key={i} className="flex-1 rounded-xl overflow-hidden border border-white/10 shadow-lg flex items-center justify-center p-2">
-                  <img
+                  <Image
                     src={src}
                     alt={`Результат ${i + 1}`}
+                    width={300}
+                    height={400}
                     className="w-full object-contain"
+                    sizes="20vw"
                   />
                 </div>
               ))}

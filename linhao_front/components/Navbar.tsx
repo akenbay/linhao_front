@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 const links = [
@@ -31,12 +32,13 @@ export default function Navbar() {
         {/* Block 1 — Logo */}
         <div className="bg-crimson/40 backdrop-blur-md border border-gold/30 rounded-xl px-4 h-12 flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
           <Link href="/">
-            <img
+            <Image
               src="/images/logo.png"
               alt="logo"
               width={32}
               height={32}
               className="object-contain"
+              priority
             />
           </Link>
         </div>

@@ -161,6 +161,12 @@ export default function CSCARegularPrices() {
                 ))}
               </ul>
 
+              {/* Group size note */}
+              <div className="px-6 mb-4 flex items-center gap-2">
+                <span className="text-xs text-cream/50">👥</span>
+                <p className="text-xs text-cream/50">Мини-группы от 2–5 человек</p>
+              </div>
+
               {/* CTA */}
               <div className="px-6 pb-7 lg:pb-10 mt-auto">
                 <a

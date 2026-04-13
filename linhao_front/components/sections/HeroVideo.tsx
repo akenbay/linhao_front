@@ -94,7 +94,7 @@ export default function HeroVideo() {
                 <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full shadow-[0_0_60px_rgba(237,197,55,0.25)] overflow-hidden">
                   <video
                     ref={videoRef}
-                    src="/videos/hero.mp4"
+                    src="https://res.cloudinary.com/dbmyngdiw/video/upload/v1776063772/hero_hlwdxl.mp4"
                     muted
                     playsInline
                     disablePictureInPicture

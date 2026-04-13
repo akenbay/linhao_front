@@ -42,6 +42,14 @@ export default function Teachers() {
       bio: 'Обучался в Китае, уровень HSK 6. Готовит к CSCA, делает упор на академическую лексику, развитие понимания сложных текстов и повышение скорости выполнения заданий.',
       image: '/images/teacherCSCA5.jpg',
     },
+    {
+      name: 'Избасар',
+      role: 'Преподаватель по математике',
+      experience: '',
+      hsk: '',
+      bio: 'Преподаватель с сильной академической базой и международным опытом поступления. Результаты: CSCA Math — 95/100. Получал гранты университетов UNIBO (Италия), HITSZ и NWPU (Китай).',
+      image: '/images/teacherCSCA6.jpg',
+    },
   ]
 
   return (
@@ -64,14 +72,14 @@ export default function Teachers() {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {teachers.map((t, i) => (
             <div
               key={i}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Teacher image */}
-              <div className="relative w-full h-56 border-b-4 border-gold">
+              <div className="relative w-full h-64 border-b-4 border-gold">
                 <Image
                   src={t.image}
                   alt={t.name}
@@ -82,14 +90,14 @@ export default function Teachers() {
               </div>
 
               {/* Text */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-serif text-crimson text-lg font-bold leading-tight mb-1">
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="font-serif text-crimson text-base font-bold leading-tight mb-1">
                   {t.name}
                 </h3>
                 <p className="text-vermillion text-xs font-semibold tracking-wide mb-3">
                   {t.role}
                 </p>
-                <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
+                <p className="text-gray-500 text-xs leading-relaxed flex-1 mb-3">
                   {t.bio}
                 </p>
               </div>

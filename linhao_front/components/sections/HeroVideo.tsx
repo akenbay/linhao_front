@@ -95,6 +95,7 @@ export default function HeroVideo() {
                   <video
                     ref={videoRef}
                     src="https://res.cloudinary.com/dbmyngdiw/video/upload/v1776063772/hero_hlwdxl.mp4"
+                    poster="https://res.cloudinary.com/dbmyngdiw/video/upload/so_0/v1776063772/hero_hlwdxl.jpg"
                     muted
                     playsInline
                     disablePictureInPicture

@@ -127,7 +127,7 @@ export default function HeroVideo() {
 
             <div className="w-full flex items-end justify-between">
               <div>
-                <p className="font-serif text-vermillion text-lg leading-tight">Имя Основателя</p>
+                <p className="font-serif text-vermillion text-lg leading-tight">Чжан Лина</p>
                 <p className="text-gray-400 text-sm mt-0.5">Основатель школы</p>
               </div>
               <a

@@ -2,9 +2,16 @@ export default function OfertaPage() {
   return (
     <main className="bg-cream min-h-screen">
 
+      {/* Back button — fixed */}
+      <div className="fixed top-4 left-4 z-50">
+        <a href="/" className="inline-flex items-center gap-2 bg-crimson text-cream/80 hover:text-cream text-sm px-4 py-2 rounded-full shadow-lg transition-colors">
+          ← На главную
+        </a>
+      </div>
+
       {/* Hero header */}
-      <div className="bg-crimson px-6 py-16 text-center">
-        <p className="text-gold/60 font-serif text-sm tracking-widest uppercase mb-3">ИП ЧЖАН · linhao.chinese</p>
+      <div className="bg-crimson px-6 py-12 text-center">
+        <p className="text-gold/60 font-serif text-sm tracking-widest uppercase mb-3">linhao.chinese</p>
         <h1 className="font-serif text-cream text-4xl md:text-5xl font-bold mb-2">Оферта и правила</h1>
         <div className="h-0.5 w-24 mx-auto mt-5" style={{ background: 'linear-gradient(90deg, transparent, #EEC537, transparent)' }} />
       </div>

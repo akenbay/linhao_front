@@ -10,8 +10,7 @@ const links = [
 ]
 
 const legalLinks = [
-  { href: '/oferta',  label: 'Оферта' },
-  { href: '/pravila', label: 'Правила' },
+  { href: '/oferta',  label: 'Оферта и правила' },
 ]
 
 function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {

@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import ContactButtons from '@/components/ContactButtons'
 
 const plans = [
   {
@@ -185,16 +186,7 @@ export default function PricingCSCA() {
 
                 {/* CTA */}
                 <div className="px-7 lg:px-9 pb-7 lg:pb-10 mt-auto">
-                  <a
-                    href="https://t.me/YourSchoolHandle"
-                    className={`block text-center font-bold text-sm px-5 py-4 rounded-xl transition-colors ${
-                      isFeatured
-                        ? 'bg-gold text-crimson hover:bg-yellow-400'
-                        : 'bg-crimson text-cream hover:opacity-90'
-                    }`}
-                  >
-                    Записаться
-                  </a>
+                  <ContactButtons variant={isFeatured ? 'gold' : 'crimson'} />
                 </div>
               </div>
             )

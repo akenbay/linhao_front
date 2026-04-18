@@ -1,4 +1,5 @@
 'use client'
+import ContactButtons from '@/components/ContactButtons'
 
 const plans = [
   {
@@ -178,16 +179,7 @@ export default function CSCARegularPrices() {
 
               {/* CTA */}
               <div className="px-6 pb-7 lg:pb-10 mt-auto">
-                <a
-                  href="https://t.me/YourSchoolHandle"
-                  className={`block text-center font-bold text-sm px-5 py-4 rounded-xl transition-colors ${
-                    plan.featured
-                      ? 'bg-gold text-crimson hover:bg-yellow-400'
-                      : 'bg-gold/10 text-gold border border-gold/30 hover:bg-gold hover:text-crimson'
-                  }`}
-                >
-                  Записаться
-                </a>
+                <ContactButtons variant={plan.featured ? 'gold' : 'dark'} />
               </div>
 
               {/* Bottom accent line */}

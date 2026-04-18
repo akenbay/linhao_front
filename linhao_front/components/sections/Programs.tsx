@@ -1,6 +1,7 @@
 'use client'
 
 import { Check } from 'lucide-react'
+import ContactButtons from '@/components/ContactButtons'
 
 const programs = [
   {
@@ -104,22 +105,12 @@ export default function Programs() {
                   </p>
                   <p className="text-gray-400 text-xs mt-2">{p.period}</p>
                 </div>
-                <a
-                  href="https://t.me/YourSchoolHandle"
-                  className="w-full text-center bg-crimson text-cream font-bold text-sm py-3 rounded-xl hover:opacity-90 transition-colors"
-                >
-                  Записаться
-                </a>
+                <ContactButtons variant="crimson" />
               </div>
 
               {/* CTA — mobile only, full width at bottom */}
               <div className="lg:hidden bg-white px-8 pb-7 pt-2 border-t border-gray-100">
-                <a
-                  href="https://t.me/YourSchoolHandle"
-                  className="block w-full text-center bg-crimson text-cream font-bold text-sm py-3.5 rounded-xl hover:opacity-90 transition-colors"
-                >
-                  Записаться
-                </a>
+                <ContactButtons variant="crimson" />
               </div>
 
             </div>

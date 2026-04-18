@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState, useEffect } from 'react'
-import Link from 'next/link'
+
 
 
 export default function HeroVideo() {
@@ -161,14 +161,12 @@ export default function HeroVideo() {
               В школе работает команда преподавателей с профильным образованием и опытом подготовки к экзаменам. Все педагоги владеют китайским языком на уровне HSK 5+ и объясняют материал доступно и системно.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/programs"
-                className="bg-crimson text-cream px-8 rounded-2xl py-4 text-base hover:bg-yellow-400 shadow-black/30 text-center transition-colors duration-300">
-                Посмотреть программы
-              </Link>
-              <a href="https://t.me/YourSchoolHandle"
-                className="border-2 border-crimson rounded-2xl text-crimson px-8 py-4 text-base hover:bg-gold hover:border-gold transition-all duration-300 text-center">
-                Написать в Telegram
+            <div className="flex gap-3 mb-12">
+              <a href="#mandarin" className="flex-1 bg-white text-vermillion font-semibold py-5 text-lg text-center tracking-wide rounded-xl shadow-md hover:bg-crimson hover:text-white hover:shadow-crimson/40 hover:shadow-lg transition-all duration-200">
+                HSK
+              </a>
+              <a href="#csca" className="flex-1 bg-white text-vermillion font-semibold py-5 text-lg text-center tracking-wide rounded-xl shadow-md hover:bg-crimson hover:text-white hover:shadow-crimson/40 hover:shadow-lg transition-all duration-200">
+                CSCA
               </a>
             </div>
 

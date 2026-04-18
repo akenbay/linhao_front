@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import ContactButtons from '@/components/ContactButtons'
 
 const TANGERINES = [
   { size: 120, top: '5%',  left: '3%',  blur: 8,  opacity: 0.25, rotate: -15 },
@@ -151,9 +152,7 @@ export default function MandarineCourse() {
                 ))}
               </ul>
 
-              <button className="bg-crimson text-cream font-bold text-base px-10 py-4 rounded-xl hover:opacity-90 transition-all active:scale-95">
-                Записаться на курс
-              </button>
+              <ContactButtons variant="crimson" />
             </div>
           </div>
 

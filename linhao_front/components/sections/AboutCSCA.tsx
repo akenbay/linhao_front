@@ -1,3 +1,5 @@
+import ContactButtons from '@/components/ContactButtons'
+
 export default function AboutDiagnostic() {
   const items = [
     {
@@ -56,12 +58,7 @@ export default function AboutDiagnostic() {
                 <h4 className="font-serif text-cream text-xl font-bold mb-2">
                   Запишитесь прямо сейчас
                 </h4>
-                <a
-                  href="https://t.me/YourSchoolHandle"
-                  className="inline-block bg-gold text-crimson font-bold text-sm px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors"
-                >
-                  Записаться на сессию
-                </a>
+                <ContactButtons variant="dark" />
               </div>
             </div>
 

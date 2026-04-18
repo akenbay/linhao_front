@@ -38,6 +38,15 @@ const plans = [
     featured: false,
   },
   {
+    label: 'Математика',
+    chinese: '数学',
+    subjects: ['Преподаватель — Избасар'],
+    lessons: 14,
+    price: '77 000',
+    badge: null,
+    featured: false,
+  },
+  {
     label: 'Химия',
     chinese: '化学',
     subjects: ['Подготовка к CSCA'],
@@ -89,7 +98,7 @@ export default function CSCARegularPrices() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:items-end">
           {plans.map((plan, i) => (
             <div
               key={i}

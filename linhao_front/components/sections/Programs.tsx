@@ -105,7 +105,7 @@ export default function Programs() {
                   </p>
                   <p className="text-gray-400 text-xs mt-2">{p.period}</p>
                 </div>
-                <ContactButtons variant="crimson" />
+                <ContactButtons variant="crimson" className="flex-col w-full" />
               </div>
 
               {/* CTA — mobile only, full width at bottom */}

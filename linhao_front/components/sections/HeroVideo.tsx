@@ -134,7 +134,7 @@ export default function HeroVideo() {
                 href="https://t.me/YourSchoolHandle"
                 className="flex items-center gap-2 text-black px-5 py-2.5 text-lg hover:text-crimson transition-colors"
               >
-                @Telegram
+                @linhao_chinesee
               </a>
             </div>
 

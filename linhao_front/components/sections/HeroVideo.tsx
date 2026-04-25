@@ -170,15 +170,15 @@ export default function HeroVideo() {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 border-t border-crimson/20 pt-8 max-w-sm">
+            <div className="grid grid-cols-3 gap-6 bg-white rounded-2xl shadow-md px-6 py-5 w-full">
               {[
                 { num: '200+', label: 'Студентов поступившие в Китай' },
                 { num: '96%', label: 'Успешно сдали HSK' },
                 { num: '87%',  label: 'Успешно сдали CSCA' },
               ].map(s => (
                 <div key={s.label} className="text-center">
-                  <p className="text-gold text-2xl font-serif font-bold">{s.num}</p>
-                  <p className="text-gold/50 text-xs mt-1">{s.label}</p>
+                  <p className="text-black text-2xl font-serif font-bold">{s.num}</p>
+                  <p className="text-black/50 text-xs mt-1">{s.label}</p>
                 </div>
               ))}
             </div>

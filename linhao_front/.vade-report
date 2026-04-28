@@ -1,0 +1,47 @@
+# Vercel Web Analytics Implementation
+
+## Overview
+Successfully installed and configured Vercel Web Analytics for this Next.js project following the latest official documentation from https://vercel.com/docs/analytics/quickstart.
+
+## Changes Made
+
+### 1. Package Installation
+- Installed `@vercel/analytics` package (version ^2.0.1)
+- Updated `package.json` to include the new dependency
+- Updated `package-lock.json` with the new package and its dependencies
+
+### 2. Analytics Component Integration
+**File Modified:** `app/layout.tsx`
+
+Added the following changes:
+- Imported the `Analytics` component from `@vercel/analytics/next`
+- Added the `<Analytics />` component to the root layout, placed alongside the existing `<SpeedInsights />` component inside the `<body>` tag
+
+This follows the Next.js App Router pattern as specified in the official Vercel documentation.
+
+### 3. Implementation Details
+The Analytics component was added to the root layout file (`app/layout.tsx`), which ensures that web analytics tracking is active across all pages of the application. The component is placed at the end of the body element, following the same pattern as the existing Speed Insights component.
+
+### 4. Verification Steps Completed
+- ✅ Package installed successfully using npm
+- ✅ Build completed successfully (TypeScript compilation passed)
+- ✅ No build errors or TypeScript errors introduced
+- ✅ All static pages generated correctly (/, /oferta, /_not-found)
+- ✅ Lock file properly updated
+
+## Technical Notes
+- This is a Next.js 16.2.1 project using the App Router and TypeScript
+- The project already had Vercel Speed Insights configured, so the Analytics component was added following the same pattern
+- The Analytics component uses the framework-specific import `@vercel/analytics/next` for seamless Next.js integration
+- No environment variables or additional configuration required for basic setup
+
+## Next Steps for User
+To activate Web Analytics in production:
+1. Enable Web Analytics in your Vercel dashboard under the Analytics section
+2. Deploy the application using `vercel deploy` or push to your connected Git repository
+3. After deployment, verify the setup by checking browser Network tab for Fetch/XHR requests to `/<unique-path>/view`
+
+## Files Modified
+- `app/layout.tsx` - Added Analytics import and component
+- `package.json` - Added @vercel/analytics dependency
+- `package-lock.json` - Updated with new package dependencies

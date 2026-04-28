@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 
 const racama = localFont({
   src: '../public/fonts/Racama-U.otf',
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${racama.variable} `}>
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

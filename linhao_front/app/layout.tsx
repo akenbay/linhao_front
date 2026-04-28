@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const racama = localFont({
   src: '../public/fonts/Racama-U.otf',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru" className="scroll-smooth">
       <body className={`${racama.variable} `}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )
